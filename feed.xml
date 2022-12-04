@@ -5,7 +5,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://0.0.0.0:4000/</link>
     <description></description>
-    <pubDate>Thu, 24 Nov 2022 18:55:36 +0000</pubDate>
+    <pubDate>Sun, 04 Dec 2022 15:22:27 +0000</pubDate>
     
       <item>
         <title>Mi nuevo mediacenter - Thinkpad m700</title>
@@ -157,11 +157,11 @@ pusimos con la instalación.&lt;/p&gt;
 &lt;p&gt;Llegados a este punto y sin ningun problema a la hora de la instalación, añadi todo lo que tenia en la RPI4B al Tiny (que no era poco):&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Nginx Proxy Manager&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Navidrome&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;Navidrome&lt;/del&gt;: Ahora usamos &lt;a href=&quot;&quot;&gt;Gonic&lt;/a&gt; la aplicació del movil &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ultrasonic&lt;/code&gt; que tengo instalada en el movil&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Duckdns&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Flexget&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Transmission&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;aMule&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/linuxserver/transmission&quot;&gt;Transmission&lt;/a&gt;: Mi fichero de &lt;a href=&quot;https://github.com/Vctrsnts/configs&quot;&gt;configuración&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/ngosang/amule&quot;&gt;aMule&lt;/a&gt;: Mi fichero de &lt;a href=&quot;https://github.com/Vctrsnts/configs&quot;&gt;configuración&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jackett&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Samba&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
