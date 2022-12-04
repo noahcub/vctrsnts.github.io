@@ -5,7 +5,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://0.0.0.0:4000/</link>
     <description></description>
-    <pubDate>Sun, 04 Dec 2022 15:22:27 +0000</pubDate>
+    <pubDate>Sun, 04 Dec 2022 20:54:24 +0000</pubDate>
     
       <item>
         <title>Mi nuevo mediacenter - Thinkpad m700</title>
@@ -156,23 +156,35 @@ pusimos con la instalación.&lt;/p&gt;
 
 &lt;p&gt;Llegados a este punto y sin ningun problema a la hora de la instalación, añadi todo lo que tenia en la RPI4B al Tiny (que no era poco):&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Nginx Proxy Manager&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;Navidrome&lt;/del&gt;: Ahora usamos &lt;a href=&quot;&quot;&gt;Gonic&lt;/a&gt; la aplicació del movil &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ultrasonic&lt;/code&gt; que tengo instalada en el movil&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Duckdns&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Flexget&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/jc21/nginx-proxy-manager&quot;&gt;Nginx Proxy Manager&lt;/a&gt;: Mi fichero de &lt;a href=&quot;https://github.com/Vctrsnts/configs&quot;&gt;configuración&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/deluan/navidrome&quot;&gt;Navidrome&lt;/a&gt;: Lo hemos dejado de usar en favor de &lt;a href=&quot;https://hub.docker.com/r/sentriz/gonic&quot;&gt;Gonic&lt;/a&gt; porque se llevaba mejor con la aplicación que uso en el movil &lt;a href=&quot;https://ultrasonic.gitlab.io/&quot;&gt;Ultrasonic&lt;/a&gt; y con la aplicación (&lt;a href=&quot;https://github.com/jeffvli/sonixd&quot;&gt;Sonixd&lt;/a&gt; - appImage) que estoy usando en el portatil personal.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/sentriz/gonic&quot;&gt;Gonic&lt;/a&gt;: Mi fichero de &lt;a href=&quot;https://github.com/Vctrsnts/configs&quot;&gt;configuración&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Duckdns&lt;/a&gt;: Mu fichero de &lt;a href=&quot;https://github.com/Vctrsnts/configs&quot;&gt;configuración&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/wiserain/flexget&quot;&gt;Flexget&lt;/a&gt;: Mi fichero de &lt;a href=&quot;https://github.com/Vctrsnts/configs&quot;&gt;configuración&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/linuxserver/transmission&quot;&gt;Transmission&lt;/a&gt;: Mi fichero de &lt;a href=&quot;https://github.com/Vctrsnts/configs&quot;&gt;configuración&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/ngosang/amule&quot;&gt;aMule&lt;/a&gt;: Mi fichero de &lt;a href=&quot;https://github.com/Vctrsnts/configs&quot;&gt;configuración&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jackett&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Samba&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/linuxserver/jackett&quot;&gt;Jackett&lt;/a&gt;: Mi fichero de &lt;a href=&quot;https://github.com/Vctrsnts/configs&quot;&gt;configuración&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/dperson/samba&quot;&gt;Samba&lt;/a&gt;: Mi fichero de &lt;a href=&quot;https://github.com/Vctrsnts/configs&quot;&gt;configuración&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Más unos cosas nuevas que he ido aprendiendo por el camino ( y todo a traves de Docker ):&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Pi-Hole&lt;/code&gt;: Bloquear toda la publicidad cuando navegas por cualquier sitio.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Wireguard&lt;/code&gt;: VPN para poder acceder a tu servidor desde cualquier sitio.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jellyfin&lt;/code&gt;: Queria una especie de biblioteca para saber que tengo (peliculas y series) pero sin necesidad de tener que conectar el HTC. Se que a lo mejor es excesivo, pero no he encontrado nada 
-parecido a lo que quiero,
-  aunque sigo investigando a ver si encuentro algo igual pero más liviano (no necesito todo lo que lleva consigo jellyfin).&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/pihole/pihole&quot;&gt;Pi-Hole&lt;/a&gt;: Bloquear toda la publicidad cuando navegas por cualquier sitio.
+    &lt;ul&gt;
+      &lt;li&gt;Mi fichero de &lt;a href=&quot;https://github.com/Vctrsnts/configs&quot;&gt;configuración&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/linuxserver/wireguard&quot;&gt;Wireguard&lt;/a&gt;: VPN para poder acceder a tu servidor desde cualquier sitio.
+    &lt;ul&gt;
+      &lt;li&gt;Mi fichero de &lt;a href=&quot;https://github.com/Vctrsnts/configs&quot;&gt;configuración&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Jellyfin&lt;/a&gt;: Queria una especie de biblioteca para saber que tengo (peliculas y series) pero sin necesidad de tener que conectar el HTC. Se que a lo mejor es excesivo, pero no he encontrado nada 
+parecido a lo que quiero, aunque sigo investigando a ver si encuentro algo igual, pero más liviano (no necesito todo lo lleva consiguo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jellyfin&lt;/code&gt;).
+    &lt;ul&gt;
+      &lt;li&gt;Mi fichero de &lt;a href=&quot;https://github.com/Vctrsnts/configs&quot;&gt;configuración&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt;: Servidor jekyll (GitHub) para crear tu propio blog en local y luego transformar los archivos &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;markdown&lt;/code&gt; en paginas html y subir a GitHub.&lt;/li&gt;
 &lt;/ul&gt;
 
