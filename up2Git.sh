@@ -1,43 +1,43 @@
 #!/bin/bash
 
-# UpToGit 0.1
-# Actualiza facilmente tu repositorio Git
+# UpToGit 0.2
+# Actualitzar facil i rapidament el teu repositori de Git
 # (CC) 2011 Alfonso Saavedra "Son Link"
 # http://sonlinkblog.blogspot.com
 # Bajo licencia GNU/GPL
 
-# Modo de uso: copia o mueve este script a /usr/bin o /usr/local/bin y desde el directorio donde se encuentre la copia de un repo git, ejecútalo de esta manera:
-# uptogit <ficheros>
+# Mode de fer servir: executal de la següent manera:
+# bash up2Git.sh <fitxers>
 
-# Comprobamos si el directorio en el que estamos es de un repositorio git
+# Comprovem si el directori on ens trobem es un repositori de Git
 if [ ! -d '.git' ]; then
-	echo 'Esta carpeta no contiene un repositorio Git'
+	echo 'Aquesta carpeta no conte cap repositori de Git'
 	exit -1
 fi
 
-# Ahora comprobamos si se le paso algun parametro
+# Ara validem si hem rebut cap parametre
 if [ $# == 0 ]; then
-	echo "UpToGit: ¡Error! No se le a pasado ningún parámetro"
-	echo "uptogit fichero1 fichero2 ... ficheroN"
+	echo "Up2Git: ¡Error! No hem rebut cap parametre"
+	echo "up2Git fitxer_1 fitxer_2 ... fitxer_N"
 	exit -1
 else
-	# Recorremos los parametros para comprobar si son ficheros o directorios
+	# Revisem tots els parametres per validar si son directoris o fitxers
 	for file in $*; do
 		if [ ! -e $file ]; then
-			echo "UpToGit: El archivo o directorio $file no existe"
+			echo "Up2Git: l'arxiu o directori $file no existeix"
 			exit -1
 		fi
 	done
 	
-	# Si llegamos hasta aquí, indicamos a Git los archivos a subir
+	# Si em arribat fins aqui, informem a Git dels arxius a pujar
 	git add $*
 	
-	# Esto nos pedira el mensaje del commit
-	echo "Introduce el mensaje del commit:"
+	# Aixo ens demanar el missatge de commit
+	echo "Entri el missatge del commit:"
 	read TXT
 	git commit -m "$TXT"
 
-	# Y terminamos subiendo los archivos
+	# I finalitzem pujant els arxius
 	git push origin master
 
 fi
