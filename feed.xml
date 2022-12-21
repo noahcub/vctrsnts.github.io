@@ -5,7 +5,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://0.0.0.0:4000/</link>
     <description></description>
-    <pubDate>Mon, 19 Dec 2022 22:08:22 +0000</pubDate>
+    <pubDate>Wed, 21 Dec 2022 19:52:36 +0000</pubDate>
     
       <item>
         <title>Cambiando de editor. Neovim</title>
@@ -45,122 +45,125 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-lua&quot; data-lang=&quot;lua&quot;&gt;  &lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fichero&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lua&lt;/span&gt;
-  &lt;span class=&quot;cm&quot;&gt;--[[
-  ██╗███╗   ██╗██╗████████╗██╗     ██╗   ██╗ █████╗
-  ██║████╗  ██║██║╚══██╔══╝██║     ██║   ██║██╔══██╗
-  ██║██╔██╗ ██║██║   ██║   ██║     ██║   ██║███████║
-  ██║██║╚██╗██║██║   ██║   ██║     ██║   ██║██╔══██║
-  ██║██║ ╚████║██║   ██║██╗███████╗╚██████╔╝██║  ██║
-  ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
-  Neovim init file
-  Version: 0.8.1 - 2022/11/14
-  Maintainer: Vctrsnts
-  Website: https://vctrsnts.github.io
-  Referencia: https://github.com/brainfucksec/neovim-lua
-  --]]&lt;/span&gt;
+&lt;div class=&quot;language-lua highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fichero&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lua&lt;/span&gt;
+   &lt;span class=&quot;cm&quot;&gt;--[[
+   ██╗███╗   ██╗██╗████████╗██╗     ██╗   ██╗ █████╗
+   ██║████╗  ██║██║╚══██╔══╝██║     ██║   ██║██╔══██╗
+   ██║██╔██╗ ██║██║   ██║   ██║     ██║   ██║███████║
+   ██║██║╚██╗██║██║   ██║   ██║     ██║   ██║██╔══██║
+   ██║██║ ╚████║██║   ██║██╗███████╗╚██████╔╝██║  ██║
+   ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
+   Neovim init file
+   Version: 0.8.1 - 2022/11/14
+   Maintainer: Vctrsnts
+   Website: https://vctrsnts.github.io
+   Referencia: https://github.com/brainfucksec/neovim-lua
+   --]]&lt;/span&gt;
+ 
+   &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;-- Import Lua Modules&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
+   &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'settings'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                                   &lt;span class=&quot;c1&quot;&gt;-- Fitxer dels Settings&lt;/span&gt;
+   &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'keymaps'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;			                              &lt;span class=&quot;c1&quot;&gt;-- Fitxer de la configuració del teclat&lt;/span&gt;
+ 
+   &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;-- Comença la carrega de plugins&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
+   &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'plugins/packer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;		                          &lt;span class=&quot;c1&quot;&gt;-- Gestor de Plugins&lt;/span&gt;
+   &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'plugins/autosave'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                           &lt;span class=&quot;c1&quot;&gt;-- Plugin per a realitzar el AutoSave&lt;/span&gt;
+   &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'plugins/ayu'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;			                          &lt;span class=&quot;c1&quot;&gt;-- Color Theme&lt;/span&gt;
+   &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'plugins/neo-tree'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                           &lt;span class=&quot;c1&quot;&gt;-- filebrowser&lt;/span&gt;
+   &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'plugins/feline'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                             &lt;span class=&quot;c1&quot;&gt;-- statusline&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-  &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;-- Import Lua Modules&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'settings'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                                   &lt;span class=&quot;c1&quot;&gt;-- Fitxer dels Settings&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'keymaps'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;			                              &lt;span class=&quot;c1&quot;&gt;-- Fitxer de la configuració del teclat&lt;/span&gt;
+&lt;div class=&quot;language-lua highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fichero&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lua&lt;/span&gt;
+   &lt;span class=&quot;cm&quot;&gt;--[[
+   FITXER SETTINGS.LUA
+   --]]&lt;/span&gt;
+ 
+   &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;-- Neovim API Aliases&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
+   &lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cmd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cmd&lt;/span&gt;
+   &lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;api&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nvim_exec&lt;/span&gt;
+   &lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt;
+   &lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;
+   &lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;
+ 
+   &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;-- Configuració General&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mapleader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;';'&lt;/span&gt;					                            &lt;span class=&quot;c1&quot;&gt;-- Canviar leader a coma&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;swapfile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;					                        &lt;span class=&quot;c1&quot;&gt;-- No fe servir swapfile&lt;/span&gt;
+ 
+   &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;-- Neovim UI&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;					                            &lt;span class=&quot;c1&quot;&gt;-- Es visualitzar els numeros de les linias&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;relativenumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;				                      &lt;span class=&quot;c1&quot;&gt;-- Es visualitzar el numero relatiu de la linia&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foldmethod&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'marker'&lt;/span&gt;				                      &lt;span class=&quot;c1&quot;&gt;-- Activada folding (default 'foldmarker')&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;splitright&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;					                        &lt;span class=&quot;c1&quot;&gt;-- vertical split to the right&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;splitbelow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;					                        &lt;span class=&quot;c1&quot;&gt;-- horizontal split to the bottom&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linebreak&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;					                        &lt;span class=&quot;c1&quot;&gt;-- wrap on word boundary&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;colorcolumn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'80'&lt;/span&gt;					                      &lt;span class=&quot;c1&quot;&gt;-- Es visualitzar la linia que marca els 80 caracters&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;termguicolors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; 
+   &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;guifont&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Fira Code&quot;&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;neovide_cursor_vfx_mode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;railgun&quot;&lt;/span&gt;
+ 
+   &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;listchars&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'tab:▸ ,space:·,nbsp:␣,trail:•,precedes:«,extends:»'&lt;/span&gt;
+ 
+   &lt;span class=&quot;c1&quot;&gt;---------------------------------------------------------------------------------------------------&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;-- Corrector ortografic per llenguatge&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;---------------------------------------------------------------------------------------------------&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[[
+ 	  augroup markdownSpell
+ 		  autocmd!
+ 		  autocmd FileType mardown setlocal spell Spelllang=es
+ 		  autocmd BufRead,BufNewFile *.md setlocal spell spelllang=es
+ 	  augroup END
+   ]]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ 
+   &lt;span class=&quot;c1&quot;&gt;---------------------------------------------------------------------------------------------------&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;-- Tabs, indent&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;---------------------------------------------------------------------------------------------------&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expandtab&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;					                        &lt;span class=&quot;c1&quot;&gt;-- use spaces instead of tabs&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shiftwidth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;					                          &lt;span class=&quot;c1&quot;&gt;-- shift 2 spaces when tab&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tabstop&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;						                            &lt;span class=&quot;c1&quot;&gt;-- 1 tab == 2 spaces&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;smartindent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;					                      &lt;span class=&quot;c1&quot;&gt;-- autoindent new lines&lt;/span&gt;
+ 
+   &lt;span class=&quot;c1&quot;&gt;---------------------------------------------------------------------------------------------------&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;-- Memory, CPU&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;---------------------------------------------------------------------------------------------------&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hidden&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;                                     &lt;span class=&quot;c1&quot;&gt;-- enable background buffers&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lazyredraw&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;                                 &lt;span class=&quot;c1&quot;&gt;-- faster scrolling&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;synmaxcol&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;                                  &lt;span class=&quot;c1&quot;&gt;-- max column for syntax highlight&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-  &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;-- Comença la carrega de plugins&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'plugins/packer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;		                          &lt;span class=&quot;c1&quot;&gt;-- Gestor de Plugins&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'plugins/autosave'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                           &lt;span class=&quot;c1&quot;&gt;-- Plugin per a realitzar el AutoSave&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'plugins/ayu'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;			                          &lt;span class=&quot;c1&quot;&gt;-- Color Theme&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'plugins/neo-tree'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                           &lt;span class=&quot;c1&quot;&gt;-- filebrowser&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'plugins/feline'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                             &lt;span class=&quot;c1&quot;&gt;-- statusline&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-lua highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fichero&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keymaps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lua&lt;/span&gt;
+   &lt;span class=&quot;cm&quot;&gt;--[[
+   FITXER KEYMAPS.LUA
+   --]]&lt;/span&gt;
+ 
+   &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;-- VARIABLES / ALIASES&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
+   &lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;api&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nvim_set_keymap&lt;/span&gt;
+   &lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default_opts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;noremap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;silent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+   &lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cmd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cmd&lt;/span&gt;
+ 
+   &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;-- Applications &amp;amp; Plugins shortcuts:&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
+ 
+   &lt;span class=&quot;c1&quot;&gt;--&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;-- nvim-tree&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;--&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;lt;C-n&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;':Neotree toggle&amp;lt;CR&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default_opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;-- open/close&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-lua&quot; data-lang=&quot;lua&quot;&gt;  &lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fichero&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lua&lt;/span&gt;
-  &lt;span class=&quot;cm&quot;&gt;--[[
-  FITXER SETTINGS.LUA
-  --]]&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;-- Neovim API Aliases&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cmd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cmd&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;api&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nvim_exec&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;-- Configuració General&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mapleader&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;';'&lt;/span&gt;					                            &lt;span class=&quot;c1&quot;&gt;-- Canviar leader a coma&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;swapfile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;					                        &lt;span class=&quot;c1&quot;&gt;-- No fe servir swapfile&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;-- Neovim UI&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;					                            &lt;span class=&quot;c1&quot;&gt;-- Es visualitzar els numeros de les linias&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;relativenumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;				                      &lt;span class=&quot;c1&quot;&gt;-- Es visualitzar el numero relatiu de la linia&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foldmethod&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'marker'&lt;/span&gt;				                      &lt;span class=&quot;c1&quot;&gt;-- Activada folding (default 'foldmarker')&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;splitright&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;					                        &lt;span class=&quot;c1&quot;&gt;-- vertical split to the right&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;splitbelow&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;					                        &lt;span class=&quot;c1&quot;&gt;-- horizontal split to the bottom&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linebreak&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;					                        &lt;span class=&quot;c1&quot;&gt;-- wrap on word boundary&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;colorcolumn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'80'&lt;/span&gt;					                      &lt;span class=&quot;c1&quot;&gt;-- Es visualitzar la linia que marca els 80 caracters&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;termguicolors&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; 
-  &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;guifont&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Fira Code&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;neovide_cursor_vfx_mode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;railgun&quot;&lt;/span&gt;
-
-  &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;listchars&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'tab:▸ ,space:·,nbsp:␣,trail:•,precedes:«,extends:»'&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;---------------------------------------------------------------------------------------------------&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;-- Corrector ortografic per llenguatge&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;---------------------------------------------------------------------------------------------------&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[[
-	  augroup markdownSpell
-		  autocmd!
-		  autocmd FileType mardown setlocal spell Spelllang=es
-		  autocmd BufRead,BufNewFile *.md setlocal spell spelllang=es
-	  augroup END
-  ]]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;---------------------------------------------------------------------------------------------------&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;-- Tabs, indent&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;---------------------------------------------------------------------------------------------------&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;expandtab&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;					                        &lt;span class=&quot;c1&quot;&gt;-- use spaces instead of tabs&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shiftwidth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;					                          &lt;span class=&quot;c1&quot;&gt;-- shift 2 spaces when tab&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tabstop&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;						                            &lt;span class=&quot;c1&quot;&gt;-- 1 tab == 2 spaces&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;smartindent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;					                      &lt;span class=&quot;c1&quot;&gt;-- autoindent new lines&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;---------------------------------------------------------------------------------------------------&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;-- Memory, CPU&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;---------------------------------------------------------------------------------------------------&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hidden&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;                                     &lt;span class=&quot;c1&quot;&gt;-- enable background buffers&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lazyredraw&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;                                 &lt;span class=&quot;c1&quot;&gt;-- faster scrolling&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;opt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;synmaxcol&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;                                  &lt;span class=&quot;c1&quot;&gt;-- max column for syntax highlight&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-lua&quot; data-lang=&quot;lua&quot;&gt;  &lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fichero&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keymaps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lua&lt;/span&gt;
-  &lt;span class=&quot;cm&quot;&gt;--[[
-  FITXER KEYMAPS.LUA
-  --]]&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;-- VARIABLES / ALIASES&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;api&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nvim_set_keymap&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default_opts&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;noremap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;silent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cmd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cmd&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;-- Applications &amp;amp; Plugins shortcuts:&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;----------------------------------------------------------------------------------------------------&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;--&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;-- nvim-tree&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;--&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;lt;C-n&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;':Neotree toggle&amp;lt;CR&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default_opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;-- open/close&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-lua&quot; data-lang=&quot;lua&quot;&gt;  &lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fichero&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;packer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lua&lt;/span&gt;
-  &lt;span class=&quot;cm&quot;&gt;--[[
+&lt;div class=&quot;language-lua highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;o&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fichero&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;packer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lua&lt;/span&gt;
+   &lt;span class=&quot;cm&quot;&gt;--[[
     FITXER PACKER.LUA
     S'ENCARREGA DE TOTA LA CONFIGURACIÓ / CARREGA DE PLUGINS
 
@@ -172,68 +175,69 @@
     https://github.com/brainfucksec/neovim-lua#readme
   --]]&lt;/span&gt;
 
-  &lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install_path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stdpath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'data'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/site/pack/packer/start/packer.nvim'&lt;/span&gt;
+   &lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt;
+   &lt;span class=&quot;kd&quot;&gt;local&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install_path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stdpath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'data'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/site/pack/packer/start/packer.nvim'&lt;/span&gt;
+ 
+   &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;glob&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;install_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;packer_bootstrap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'git'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'clone'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'--depth'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'https://github.com/wbthomason/packer.nvim'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'packer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;startup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;-- My plugins here&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;-- use 'foo1/bar1.nvim'&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;-- use 'foo2/bar2.nvim'&lt;/span&gt;
 
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;glob&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;install_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;packer_bootstrap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'git'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'clone'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'--depth'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'https://github.com/wbthomason/packer.nvim'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;install_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'packer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;startup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;-- My plugins here&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;-- use 'foo1/bar1.nvim'&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;-- use 'foo2/bar2.nvim'&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;-- Automatically set up your configuration after cloning packer.nvim&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;-- Put this at the end after all plugins&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'wbthomason/packer.nvim'&lt;/span&gt;
-  
-    &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;-- colorschemes&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Shatur/neovim-ayu'&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;-- Activem Icones&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'kyazdani42/nvim-web-devicons'&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'adelarsq/vim-devicons-emoji'&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;-- Activem Explorer / Navegador de directoris&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;s1&quot;&gt;'nvim-neo-tree/neo-tree.nvim'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;branch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;v2.x&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;requires&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;nvim-lua/plenary.nvim&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;kyazdani42/nvim-web-devicons&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;-- not strictly required, but recommended&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&quot;MunifTanjim/nui.nvim&quot;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;-- Activem Status Line&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Iron-E/nvim-highlite'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;s1&quot;&gt;'feline-nvim/feline.nvim'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;requires&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-       &lt;span class=&quot;s1&quot;&gt;'nvim-web-devicons'&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;-- Activem el AutoSave&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Pocco81/auto-save.nvim&quot;&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;-- Final del fitxer de configuració de plugins&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;packer_bootstrap&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'packer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+     &lt;span class=&quot;c1&quot;&gt;-- Automatically set up your configuration after cloning packer.nvim&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;-- Put this at the end after all plugins&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'wbthomason/packer.nvim'&lt;/span&gt;
+   
+     &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;-- colorschemes&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Shatur/neovim-ayu'&lt;/span&gt;
+ 
+     &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;-- Activem Icones&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'kyazdani42/nvim-web-devicons'&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'adelarsq/vim-devicons-emoji'&lt;/span&gt;
+ 
+     &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;-- Activem Explorer / Navegador de directoris&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+       &lt;span class=&quot;s1&quot;&gt;'nvim-neo-tree/neo-tree.nvim'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;branch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;v2.x&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;requires&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;s2&quot;&gt;&quot;nvim-lua/plenary.nvim&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;s2&quot;&gt;&quot;kyazdani42/nvim-web-devicons&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;-- not strictly required, but recommended&lt;/span&gt;
+         &lt;span class=&quot;s2&quot;&gt;&quot;MunifTanjim/nui.nvim&quot;&lt;/span&gt;
+       &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ 
+     &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;-- Activem Status Line&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Iron-E/nvim-highlite'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+       &lt;span class=&quot;s1&quot;&gt;'feline-nvim/feline.nvim'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;requires&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;'nvim-web-devicons'&lt;/span&gt;
+       &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ 
+     &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;-- Activem el AutoSave&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Pocco81/auto-save.nvim&quot;&lt;/span&gt;
+ 
+     &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;-- Final del fitxer de configuració de plugins&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;-------------------------------------------------------------------------------------------------&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;packer_bootstrap&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
+       &lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'packer'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Pues, ya has podido comprobar como lo tengo yo configurado y a pleno rendimiento, pero tal como he dicho al principio, aun falta por pulir algunas cosas.&lt;/p&gt;
 
@@ -257,51 +261,53 @@
 
 &lt;p&gt;Es el siguiente que pongo a continuación&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  &lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
-
-  &lt;span class=&quot;c&quot;&gt;# Actualitzar rapidament el teu repositori de Git&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;# (CC) 2011 Alfonso Saavedra &quot;Son Link&quot;&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;# http://sonlinkblog.blogspot.com&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;# Bajo licencia GNU/GPL&lt;/span&gt;
-
-  &lt;span class=&quot;c&quot;&gt;# up2Git.sh &amp;lt;ficheros&amp;gt;&lt;/span&gt;
-
-  &lt;span class=&quot;c&quot;&gt;# Comprovem si el directori en el que estem, es un repositori de Git&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'.git'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
-    &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Aquest directori no conte un repositori de Git'&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-1&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
-
-  &lt;span class=&quot;c&quot;&gt;# Ara validem i l'hi hem passat algun parametre&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$# &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; 0 &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
-    &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Up2Git: ¡Error! No l'hi has passat cap parametre&quot;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;up2Git fitxer_1 fitxer_2 ... fitxer_N&quot;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-1&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-    &lt;span class=&quot;c&quot;&gt;# Revisem els parametres per validar si son fitxers o directori&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;file &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do
-      if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
-        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Up2Git: L'arxiu o directori &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$file&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; no existeix&quot;&lt;/span&gt;
-        &lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-1&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;fi
-    done&lt;/span&gt;
-    
-    &lt;span class=&quot;c&quot;&gt;# Si hem arribat fins aqui, informem a Git dels arxius a pujar&lt;/span&gt;
-    git add &lt;span class=&quot;nv&quot;&gt;$*&lt;/span&gt;
-    
-    &lt;span class=&quot;c&quot;&gt;# Aixo ens demana el missatge del commit&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Informi del missatge del commit:&quot;&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;read &lt;/span&gt;TXT
-    git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$TXT&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-
-    &lt;span class=&quot;c&quot;&gt;# i finalitzem pujant els arxius&lt;/span&gt;
-    git push origin master
-
-  &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-vim highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   #&lt;span class=&quot;p&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/bin/&lt;/span&gt;bash
+ 
+   # Actualitzar rapidament &lt;span class=&quot;k&quot;&gt;el&lt;/span&gt; teu repositori de Git
+   # &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;CC&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2011&lt;/span&gt; Alfonso Saavedra &lt;span class=&quot;s2&quot;&gt;&quot;Son Link&quot;&lt;/span&gt;
+   # http&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt;sonlinkblog&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;blogspot&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;com&lt;/span&gt;
+   # Bajo licencia GNU/GPL
+ 
+   # up2Git&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;sh&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;ficheros&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+ 
+   # Comprovem &lt;span class=&quot;k&quot;&gt;si&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;el&lt;/span&gt; directori &lt;span class=&quot;k&quot;&gt;en&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;el&lt;/span&gt; que estem&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; es un repositori de Git
+   &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'.git'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;; then
+     echo &lt;span class=&quot;s1&quot;&gt;'Aquest directori no conte un repositori de Git'&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-1&lt;/span&gt;
+   fi
+ 
+   # Ara validem &lt;span class=&quot;k&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;l&lt;/span&gt;'&lt;span class=&quot;k&quot;&gt;hi&lt;/span&gt; hem passat algun parametre
+   &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; $# &lt;span class=&quot;p&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;; then
+     echo &lt;span class=&quot;s2&quot;&gt;&quot;Up2Git: ¡Error! No l'hi has passat cap parametre&quot;&lt;/span&gt;
+     echo &lt;span class=&quot;s2&quot;&gt;&quot;up2Git fitxer_1 fitxer_2 ... fitxer_N&quot;&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-1&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+     # Revisem els parametres per validar &lt;span class=&quot;k&quot;&gt;si&lt;/span&gt; son fitxers &lt;span class=&quot;k&quot;&gt;o&lt;/span&gt; directori
+     &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; $*; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+       &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;e&lt;/span&gt; $&lt;span class=&quot;k&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;; then
+         echo &lt;span class=&quot;s2&quot;&gt;&quot;Up2Git: L'arxiu o directori $file no existeix&quot;&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;exit&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-1&lt;/span&gt;
+       fi
+     done
+     
+     # Si hem arribat fins aqui&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; informem &lt;span class=&quot;k&quot;&gt;a&lt;/span&gt; Git dels arxius &lt;span class=&quot;k&quot;&gt;a&lt;/span&gt; pujar
+     git &lt;span class=&quot;nb&quot;&gt;add&lt;/span&gt; $*
+     
+     # Aixo ens demana &lt;span class=&quot;k&quot;&gt;el&lt;/span&gt; missatge del commit
+     echo &lt;span class=&quot;s2&quot;&gt;&quot;Informi del missatge del commit:&quot;&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;read&lt;/span&gt; TXT
+     git commit &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;$TXT&quot;&lt;/span&gt;
+ 
+     # &lt;span class=&quot;k&quot;&gt;i&lt;/span&gt; finalitzem pujant els arxius
+     git push origin master
+ 
+   fi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Para usarlo, en mi caso, lo hago de la siguiente manera :&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-terminal&quot; data-lang=&quot;terminal&quot;&gt;&lt;span class=&quot;gp&quot;&gt;  usuari@debian:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;bash up2Git.sh .&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   usuari@debian:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bash up2Git.sh &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;El script es de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Alfonso Saavedra&lt;/code&gt; a el todo mi agradecimiento, por facilitarme el tener mis repositorios de GitHub actualizados.&lt;/p&gt;
 
@@ -328,85 +334,92 @@
 
 &lt;p&gt;Aprovechando que en el servidor ya tengo Python instalado, hare que se ejecute en el mismo servidor. Eso si, también tienes que instalar:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-terminal&quot; data-lang=&quot;terminal&quot;&gt;&lt;span class=&quot;gp&quot;&gt;  usuari@debian:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--user&lt;/span&gt; feddparser mastodon&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   usuari@debian:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;pip &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--user&lt;/span&gt; feddparser mastodon
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Para que Python pueda realizar el tratamiento del fichero &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;xml&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Una vez que ya tienes la aplicación creada, tienes que crear un fichero en &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Python&lt;/code&gt; que tiene que tener la siguiente estructura:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;  &lt;span class=&quot;c1&quot;&gt;#!/usr/bin/env python
-&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# -*- coding: utf-8 -*-
-&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;# el fitxer original es de Carlos M. ( https://elblogdelazaro.org )
-&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;# Tens que tindre instalats les llibreries feedparser, Mastodon
-&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;# Realitzem la crida als moduls de Python
-&lt;/span&gt;  &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;feedparser&lt;/span&gt;
-  &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;random&lt;/span&gt;
-  &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;mastodon&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Mastodon&lt;/span&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;c1&quot;&gt;#!/usr/bin/env python
+&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# -*- coding: utf-8 -*-
+&lt;/span&gt; 
+   &lt;span class=&quot;c1&quot;&gt;# el fitxer original es de Carlos M. ( https://elblogdelazaro.org )
+&lt;/span&gt; 
+   &lt;span class=&quot;c1&quot;&gt;# Tens que tindre instalats les llibreries feedparser, Mastodon
+&lt;/span&gt; 
+   &lt;span class=&quot;c1&quot;&gt;# Realitzem la crida als moduls de Python
+&lt;/span&gt;   &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;feedparser&lt;/span&gt;
+   &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;random&lt;/span&gt;
+   &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;mastodon&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Mastodon&lt;/span&gt;
+ 
+   &lt;span class=&quot;c1&quot;&gt;# Reallitzem la crida a les claus del Diccionari
+&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;CUSTOMER_KEY&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'xxxxxxxxxxxxxxx'&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;CUSTOMER_SECRET&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'xxxxxxxxxxxxxxxxx'&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;ACCESS_TOKEN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'xxxxxxxxxxxx'&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;ACCESS_TOKEN_SECRET&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'xxxxxxxxxxxxxxxxxxx'&lt;/span&gt;
+ 
+   &lt;span class=&quot;c1&quot;&gt;# Informem de l'adreça del feed
+&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;feed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'tu dirección web hacia el feed.xml'&lt;/span&gt;
+ 
+   &lt;span class=&quot;c1&quot;&gt;# Descodifiquem el feed ( arxiu XML )
+&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;feedparser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;feed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ 
+   &lt;span class=&quot;c1&quot;&gt;# Obtenim la longitud del feed i aleatoriament seleccionem un article
+&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;feedlen&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'entries'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;randint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;feedlen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+ 
+   &lt;span class=&quot;c1&quot;&gt;# Iniciem l'API de Mastodon, i escribim l'estat
+&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;status_text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'entries'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'title'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'entries'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'link'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;articulo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Recordando artículos publicados:&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-  &lt;span class=&quot;c1&quot;&gt;# Reallitzem la crida a les claus del Diccionari
-&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;CUSTOMER_KEY&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'xxxxxxxxxxxxxxx'&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;CUSTOMER_SECRET&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'xxxxxxxxxxxxxxxxx'&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;ACCESS_TOKEN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'xxxxxxxxxxxx'&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;ACCESS_TOKEN_SECRET&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'xxxxxxxxxxxxxxxxxxx'&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;# Informem de l'adreça del feed
-&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;feed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'tu dirección web hacia el feed.xml'&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;# Descodifiquem el feed ( arxiu XML )
-&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;feedparser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;feed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;# Obtenim la longitud del feed i aleatoriament seleccionem un article
-&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;feedlen&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'entries'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;randint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;feedlen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;# Iniciem l'API de Mastodon, i escribim l'estat
-&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;status_text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'entries'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'title'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'entries'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'link'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;articulo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Recordando artículos publicados:&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;status_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;# Token y url de la Instancia
-&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;mastodon&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Mastodon&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;access_token&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'XXXXXXXXXXXXXXXXXXXXXXX'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;api_base_url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://mastodon.online/'&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;# Publiquem a Mastodon
-&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;mastodon&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status_post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;articulo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+   &lt;span class=&quot;c1&quot;&gt;# Token y url de la Instancia
+&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;mastodon&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Mastodon&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;access_token&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'XXXXXXXXXXXXXXXXXXXXXXX'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+     &lt;span class=&quot;n&quot;&gt;api_base_url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'https://mastodon.online/'&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;# Publiquem a Mastodon
+&lt;/span&gt;   &lt;span class=&quot;n&quot;&gt;mastodon&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status_post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;articulo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Lo que tienes que tener en cuenta, es informar correctamente de:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CUSTOMER_KEY&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CUSTOMER_SECRET&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACCESS_TOKEN&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACCESS_TOKEN_SECRET&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;feed&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;CUSTOMER_KEY&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;CUSTOMER_SECRET&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ACCESS_TOKEN&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ACCESS_TOKEN_SECRET&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;feed&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Una vez, tengas el fichero creado, si quieres hacer pruebas, tienes que hacerlo de la siguiente manera :&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-terminal&quot; data-lang=&quot;terminal&quot;&gt;&lt;span class=&quot;gp&quot;&gt;  usuari@debian:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;python3 nombreDelArchivo.py&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   usuari@debian:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python3 nombreDelArchivo.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Entonces, si no has tenido ningun problema, a tu cuenta de Mastodon te llegara un articulo aleatorio de tu web.&lt;/p&gt;
 
 &lt;p&gt;Después de hacer las pruebas que creas oportunas, solo te quedara configurar el cron, para que se ejecute cuando tu quieras.&lt;/p&gt;
 
-&lt;p&gt;Yo lo tengo a que lo haga una vez a la semana, pero me estoy replanteando cambiarlo a que lo haga 3 veces por semana, tampoco quiero saturar a Mastodon.&lt;/p&gt;
+&lt;p&gt;Yo lo tengo a que lo haga una vez a la semana, pero me estoy replanteando cambiarlo a que lo haga 3 veces por semana, pero no se si hacerlo, porque entonces, enviaria muchos toot a mastodon y no me gustaria saturar la red de mastodon por unos simples articulos.&lt;/p&gt;
 
 &lt;p&gt;Para la configuración del &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CRON&lt;/code&gt; lo tengo de la siguiente manera:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-terminal&quot; data-lang=&quot;terminal&quot;&gt;&lt;span class=&quot;go&quot;&gt;  @weekly /usr/bin/python3 /home/tu_usuario/lugar_donde_tengas_el_script/botMastodonPythonRss.py&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   @weekly /usr/bin/python3 /home/tu_usuario/lugar_donde_tengas_el_script/botMastodonPythonRss.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;En el caso de que lo quisieras hacer funcionar en &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Twitter&lt;/code&gt; tienes que tener en cuenta las siguientes modificaciones al archivo de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Python&lt;/code&gt;:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;  &lt;span class=&quot;c1&quot;&gt;# En vez de usar la libreria &quot;Mastodon&quot; de Python, tienes que usar &quot;Twython&quot;
-&lt;/span&gt;  &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;twython&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Twython&lt;/span&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;c1&quot;&gt;# En vez de usar la libreria &quot;Mastodon&quot; de Python, tienes que usar &quot;Twython&quot;
+&lt;/span&gt;   &lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;twython&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Twython&lt;/span&gt;
 
-  &lt;span class=&quot;n&quot;&gt;api&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Twython&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CONSUMER_KEY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CONSUMER_SECRET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ACCESS_KEY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ACCESS_SECRET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+   &lt;span class=&quot;n&quot;&gt;api&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Twython&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CONSUMER_KEY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CONSUMER_SECRET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ACCESS_KEY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ACCESS_SECRET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Y luego, solamente tienes que añadir la siguiente linea para publicar el articulo en &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Twitter&lt;/code&gt;:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;  &lt;span class=&quot;n&quot;&gt;api&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;update_status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;articulo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;n&quot;&gt;api&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;update_status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;articulo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Espero que te sirva tanto como me ha servido a mi. Y eso si, no se te olvide darle las gracias a &lt;a href=&quot;http://elblogdelazaro.org&quot;&gt;Carlos M&lt;/a&gt; por el increible articulo en que me he basado yo.&lt;/p&gt;
 
@@ -461,9 +474,9 @@ que es para mear y no echar gota).&lt;/p&gt;
 &lt;p&gt;Despues de buscar información como un loco, veo que hay un error (validado y reportado) en el diseño de la Raspberry que es, cuando usas la WIFI esta se &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;acopla&lt;/code&gt; a la señal del cable HDMI y hace 
 que se anule la señal WIFI. Para solucionar este problema se puede hacer de 3 maneras:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Solución dificil&lt;/code&gt;, cambiar de canal en el que emite tu router por otro diferente para que no se acople a la señal del cable HDMI.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Solución facil&lt;/code&gt;, desactivar la WIFI de la Raspberry y usar un conector USB-WIFI&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Solución ideal&lt;/code&gt;, esperar a que Raspberry saque un nuevo firmware que solucione este problema. Se comenta que hasta finales de año no estara disponible.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Solución dificil&lt;/strong&gt;, cambiar de canal en el que emite tu router por otro diferente para que no se acople a la señal del cable HDMI.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Solución facil&lt;/strong&gt;, desactivar la WIFI de la Raspberry y usar un conector USB-WIFI&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Solución ideal&lt;/strong&gt;, esperar a que Raspberry saque un nuevo firmware que solucione este problema. Se comenta que hasta finales de año no estara disponible.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;En mi caso, lo que hice fue escoger la solución facil, me compre un usb-wifi y volvi de nuevo a configurar la RPI4B, esperando, por fin, poder usarla como HTC.&lt;/p&gt;
@@ -474,12 +487,13 @@ distancia conectado a traves de USB y el USB de la WIFI, la Raspberry no podia m
 &lt;p&gt;Para que os hagais una idea, la RPI3B funcionaba mejor que la RPI4B y eso que esta ultima (siempre lo añado a todos mis Libreelec) habia creado el fichero &lt;strong&gt;advancedsettings.xml&lt;/strong&gt; donde le añado lo 
 siguiente:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  &amp;lt;advancedsettings &lt;span class=&quot;nv&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1.0&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-    &amp;lt;cache&amp;gt;
-      &amp;lt;buffermode&amp;gt;4&amp;lt;/buffermode&amp;gt;
-      &amp;lt;memorysize&amp;gt;0&amp;lt;/memorysize&amp;gt;
-    &amp;lt;/cache&amp;gt;
-  &amp;lt;/advancedsettings&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-vim highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;advancedsettings &lt;span class=&quot;k&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1.0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;cache&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+       &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;buffermode&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;/buffermode&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+       &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;memorysize&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;/memorysize&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;/cache&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;/advancedsettings&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Donde:&lt;/p&gt;
 &lt;ul&gt;
@@ -560,23 +574,28 @@ pusimos con la instalación.&lt;/p&gt;
 &lt;p&gt;La instalación no cambia en GNU/Debian, sin ningun problema, aunque tuve dudas de que manera particionar el SSD para sacarle el maximo rendimiento. Después de pensar lo deje de la siguiente manera 
 (seguramente hay otra mejor, pero no se me ha ocurrido):&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  /dev/sdb1    /       200Gb
-  /dev/sdb2    swap    4Gb
-  /dev/sdb5    /home   40Gb&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-vim highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;sr&quot;&gt;/dev/&lt;/span&gt;sdb1    /       &lt;span class=&quot;m&quot;&gt;200&lt;/span&gt;Gb
+   &lt;span class=&quot;sr&quot;&gt;/dev/&lt;/span&gt;sdb2    swap    &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;Gb
+   &lt;span class=&quot;sr&quot;&gt;/dev/&lt;/span&gt;sdb5    /home   &lt;span class=&quot;m&quot;&gt;40&lt;/span&gt;Gb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Se que en un PC con 8Gb de RAM, poner swap no tiene ningun sentido, pero, nunca se sabe…&lt;/p&gt;
 
 &lt;p&gt;Llegados a este punto y sin ningun problema a la hora de la instalación, añadi todo lo que tenia en la RPI4B al Tiny (que no era poco):&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Nginx Proxy Manager&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Navidrome&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Duckdns&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Flexget&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Transmission&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/ngosang/amule&quot;&gt;aMule&lt;/a&gt;: Mi fichero de &lt;a href=&quot;&quot;&gt;configuración&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jackett&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Samba&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Nginx Proxy Manager&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Navidrome&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Duckdns&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Flexget&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Transmission&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/ngosang/amule&quot;&gt;aMule&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Jackett&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Samba&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt;: &lt;a href=&quot;https://www.github.com/Vctrsnts/dot_file&quot;&gt;aqui&lt;/a&gt; podreis encontrar los ficheros de configuración que estoy usando.&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;Más unos cosas nuevas que he ido aprendiendo por el camino ( y todo a traves de Docker ):&lt;/p&gt;
 &lt;ul&gt;
@@ -631,37 +650,38 @@ comunes de compresión / descompresión&lt;/p&gt;
 
 &lt;p&gt;Lo primero es editar nuestro fichero &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.basrch&lt;/code&gt; y hacerle las siguientes modificacions :&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  &lt;span class=&quot;c&quot;&gt;### EXTRACCIÓ DE FITXERS&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;# usage: ex &amp;lt;file&amp;gt;&lt;/span&gt;
-  ex &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
-      case&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tar.bz2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;   &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xjf &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tar.gz&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;    &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xzf &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.bz2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;       bunzip2 &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.rar&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;       unrar x &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.gz&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;        &lt;span class=&quot;nb&quot;&gt;gunzip&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tar&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;       &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xf &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tbz2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;      &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xjf &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tgz&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;       &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xzf &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;   &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.zip&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;       unzip &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.Z&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;         uncompress &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.7z&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;        7z x &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;      &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.deb&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;       ar x &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;      &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tar.xz&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;    &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xf &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tar.zst&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;   unzstd &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;           &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;'&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;' no es pot extreure via ex()&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;esac&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;else
-      &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;'&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;' no es un fitxer valid&quot;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-vim highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   ### EXTRACCIÓ DE FITXERS
+   # usage&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ex&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;ex&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;f&lt;/span&gt; $&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; ; then
+       case $&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+         *&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;tar&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;bz2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;   tar xjf $&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;   ;;
+         *&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;tar&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;gz&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;    tar xzf $&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;   ;;
+         *&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;bz2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;       bunzip2 $&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;   ;;
+         *&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;rar&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;       unrar &lt;span class=&quot;k&quot;&gt;x&lt;/span&gt; $&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;   ;;
+         *&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;gz&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;        gunzip $&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    ;;
+         *&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;tar&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;       tar xf $&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    ;;
+         *&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;tbz2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;      tar xjf $&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;   ;;
+         *&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;tgz&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;       tar xzf $&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;   ;;
+         *&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;zip&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;       unzip $&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;     ;;
+         *&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;Z&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;         uncompress $&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;;;
+         *&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;z&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;        &lt;span class=&quot;m&quot;&gt;7&lt;/span&gt;z &lt;span class=&quot;k&quot;&gt;x&lt;/span&gt; $&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;      ;;
+         *&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;deb&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;       &lt;span class=&quot;k&quot;&gt;ar&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;x&lt;/span&gt; $&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;      ;;
+         *&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;tar&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;xz&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;    tar xf $&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    ;;
+         *&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;tar&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;zst&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;   unzstd $&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;    ;;
+         *&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;           echo &lt;span class=&quot;s2&quot;&gt;&quot;'$1' no es pot extreure via ex()&quot;&lt;/span&gt; ;;
+       esac
+     &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+       echo &lt;span class=&quot;s2&quot;&gt;&quot;'$1' no es un fitxer valid&quot;&lt;/span&gt;
+     fi
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;con esto lo que conseguimos es que para descomprimir cualquier fichero lo podemos hacer de la siguiente manera :&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-terminal&quot; data-lang=&quot;terminal&quot;&gt;&lt;span class=&quot;gp&quot;&gt;  usuari@debian:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;ex nombre_fichero_comprimido&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   usuari@debian:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ex nombre_fichero_comprimido
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
       </item>
@@ -705,11 +725,13 @@ siguiente manera:&lt;/p&gt;
 
 &lt;p&gt;Creamos un directorio donde montaremos nuestra imagen:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-terminal&quot; data-lang=&quot;terminal&quot;&gt;&lt;span class=&quot;gp&quot;&gt;  usuari@raspberry:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;mount &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; loop /home/tuUsuario/imagen_debian.iso /directorio/destino&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   usuari@raspberry:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;mount &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; loop /home/tuUsuario/imagen_debian.iso /directorio/destino
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Una vez montado la imagen, tenemos que copiar todo el contenido de este directorio a la primera partición, incluido el directorio &lt;strong&gt;.disk&lt;/strong&gt;:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-terminal&quot; data-lang=&quot;terminal&quot;&gt;&lt;span class=&quot;gp&quot;&gt;  usuari@raspberry:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo cp&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; /directorio/destino /directorio/primera_particion&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   usuari@raspberry:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo cp&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; /directorio/destino /directorio/primera_particion
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Una vez, hemos realizado esto, es lo que hice yo, porque sino, SO live (xubuntu) no me detectaba la primera partición, volvemos a nuestro GPARTED, seleccionamos la primera partición, seleccionamos los
  &lt;strong&gt;flags&lt;/strong&gt; de la partición y marcamos &lt;strong&gt;boot&lt;/strong&gt; y &lt;strong&gt;esp&lt;/strong&gt;.&lt;/p&gt;
@@ -755,23 +777,13 @@ porque es el minimo que (en mi caso) GPARTED no me transformaba la primera parti
       </item>
     
       <item>
-        <title>Usando Tmux</title>
-        <link>/2022/01/01/usando-tmux.html</link>
-        <guid isPermaLink="true">/2022/01/01/usando-tmux.html</guid>
-        <description>&lt;p&gt;Mi configuración de tmux&lt;/p&gt;
-
-&lt;p&gt;video peladonerd hablando de tmux :https://www.youtube.com/watch?v=7gmpjacFoHM&lt;/p&gt;
-</description>
-        <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-      </item>
-    
-      <item>
         <title>Solucionar error i915 en grafica Intel</title>
         <link>/2021/06/09/solucionar-error-i915.html</link>
         <guid isPermaLink="true">/2021/06/09/solucionar-error-i915.html</guid>
         <description>&lt;p&gt;Desde que Debian GNU/Linux saco la versión del kernel 5.4 en mi portatil fue recurrente los flashes en la pantalla y el siguiente error:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-terminal&quot; data-lang=&quot;terminal&quot;&gt;&lt;span class=&quot;go&quot;&gt;  [drm:intel_cpu_fifo_underrun_irq_handler [i915]] *ERROR* CPU pipe A FIFO underrun&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;drm:intel_cpu_fifo_underrun_irq_handler &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;i915]] &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;ERROR&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; CPU pipe A FIFO underrun
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;La solución que todo el mundo me decia era eliminar el paquete del driver de &lt;em&gt;xserver-xorg-video-intel&lt;/em&gt; y usar el por defecto del kernel. Pero lo entendia que significaba eso (realmente era asi), no 
 sabia como se tenia que hacer, porque si hacia eso perdia todo el &lt;strong&gt;XORG&lt;/strong&gt;, al final en este &lt;a href=&quot;http://forums.debian.net/viewtopic.php?f=7&amp;amp;t=149472&amp;amp;p=737807#p737807&quot;&gt;hilo&lt;/a&gt; me indicaron que si hacia esto, 
@@ -783,30 +795,35 @@ solo se borraba el metapaquete de &lt;strong&gt;xserver-xorg-video-all&lt;/stron
 
 &lt;p&gt;Lo que tienes que hacer es crear (en mi caso, funciona) el siguiente fichero &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;20-intel.conf&lt;/code&gt; con el siguiente contenido:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-terminal&quot; data-lang=&quot;terminal&quot;&gt;&lt;span class=&quot;gp&quot;&gt;  usuari@debian:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls &lt;/span&gt;etc/X11/&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   usuari@debian:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls &lt;/span&gt;etc/X11/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Si no aparece &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;xorg.conf.d&lt;/code&gt; vas a tener que crear la carpeta&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-terminal&quot; data-lang=&quot;terminal&quot;&gt;&lt;span class=&quot;gp&quot;&gt;  usuari@debian:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;su
-&lt;span class=&quot;gp&quot;&gt;  usuari@debian:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; /etc/X11/xorg.conf.d&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   usuari@debian:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;su
+   usuari@debian:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; /etc/X11/xorg.conf.d
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Y luego crear el archivo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;20-intel.conf&lt;/code&gt;&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-terminal&quot; data-lang=&quot;terminal&quot;&gt;&lt;span class=&quot;gp&quot;&gt;  usuari@debian:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;su
-&lt;span class=&quot;gp&quot;&gt;  usuari@debian:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;vi /etc/X11/xorg.conf.d/20-intel.conf&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   usuari@debian:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;su
+   usuari@debian:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vi /etc/X11/xorg.conf.d/20-intel.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Dentro del mismo poner el siguiente texto&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-config&quot; data-lang=&quot;config&quot;&gt;  &lt;span class=&quot;n&quot;&gt;Section&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Device&quot;&lt;/span&gt;
-       &lt;span class=&quot;n&quot;&gt;Identifier&lt;/span&gt;  &lt;span class=&quot;s2&quot;&gt;&quot;Intel Graphics&quot;&lt;/span&gt;
-       &lt;span class=&quot;n&quot;&gt;Driver&lt;/span&gt;      &lt;span class=&quot;s2&quot;&gt;&quot;intel&quot;&lt;/span&gt;
-       &lt;span class=&quot;n&quot;&gt;Option&lt;/span&gt;      &lt;span class=&quot;s2&quot;&gt;&quot;AccelMethod&quot;&lt;/span&gt;  &lt;span class=&quot;s2&quot;&gt;&quot;uxa&quot;&lt;/span&gt;
-       &lt;span class=&quot;c&quot;&gt;#Option      &quot;AccelMethod&quot;  &quot;sna&quot;
-&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;EndSection&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-vim highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   Section &lt;span class=&quot;s2&quot;&gt;&quot;Device&quot;&lt;/span&gt;
+        Identifier  &lt;span class=&quot;s2&quot;&gt;&quot;Intel Graphics&quot;&lt;/span&gt;
+        Driver      &lt;span class=&quot;s2&quot;&gt;&quot;intel&quot;&lt;/span&gt;
+        Option      &lt;span class=&quot;s2&quot;&gt;&quot;AccelMethod&quot;&lt;/span&gt;  &lt;span class=&quot;s2&quot;&gt;&quot;uxa&quot;&lt;/span&gt;
+        #Option      &lt;span class=&quot;s2&quot;&gt;&quot;AccelMethod&quot;&lt;/span&gt;  &lt;span class=&quot;s2&quot;&gt;&quot;sna&quot;&lt;/span&gt;
+   EndSection
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Si al hacer los cambios GNU/Debian no inicia desde grub, seleccionar el &lt;strong&gt;recovery mode&lt;/strong&gt; y eliminas el archivo&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-terminal&quot; data-lang=&quot;terminal&quot;&gt;&lt;span class=&quot;go&quot;&gt;  rm /etc/X11/xorg.conf.d/20-intel.conf&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; /etc/X11/xorg.conf.d/20-intel.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Donde indicas que siga usando el mismo driver que venia usando, lo unico que cambias es (en palabras del post):&lt;/p&gt;
 
@@ -839,26 +856,18 @@ solo se borraba el metapaquete de &lt;strong&gt;xserver-xorg-video-all&lt;/stron
 
 &lt;p&gt;A traves del siguiente codigo de bash, podemos crear nuestro propio fichero de logs:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  &lt;span class=&quot;nv&quot;&gt;tie&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/tmp/script_final.log&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;# PER SAPIGUER LA DATA D'INICI*&lt;/span&gt;
-  &lt;span class=&quot;nv&quot;&gt;hi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;# PER SAPIGUER LA DATA FINAL*&lt;/span&gt;
-  &lt;span class=&quot;nv&quot;&gt;hf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+&lt;div class=&quot;language-vim highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   tie&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/tmp/&lt;/span&gt;script_final&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;log&lt;/span&gt;*
+   # PER SAPIGUER LA DATA D'INICI*
+   &lt;span class=&quot;k&quot;&gt;hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;`date`*
+   # PER SAPIGUER LA DATA FINAL*
+   &lt;span class=&quot;nb&quot;&gt;hf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;`date`*
 
-  &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$hf&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$tie&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+   echo $&lt;span class=&quot;nb&quot;&gt;hf&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot; &quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; $tie*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Y con esto ya tenemos nuestro log&lt;/p&gt;
 </description>
         <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
-      </item>
-    
-      <item>
-        <title>Descargar Podcast a traves de Flexgetx - Annexo</title>
-        <link>/2021/06/07/flexget-podcast-annexo.html</link>
-        <guid isPermaLink="true">/2021/06/07/flexget-podcast-annexo.html</guid>
-        <description>
-</description>
-        <pubDate>Mon, 07 Jun 2021 00:00:00 +0000</pubDate>
       </item>
     
       <item>
@@ -881,44 +890,48 @@ de este programa sin preocuparme.&lt;/p&gt;
 
 &lt;p&gt;La primera parte del script &lt;strong&gt;template&lt;/strong&gt; esta compuesto por los siguientes filtros (en mi caso):&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  templates:
-    podcast:
-      accept_all: &lt;span class=&quot;nb&quot;&gt;yes&lt;/span&gt;
-      &lt;span class=&quot;c&quot;&gt;# PER A QUE SOLAMENT DESCARREGUI ELS 5 ULTIMS PODCAST&lt;/span&gt;
-      limit_new: 5
-      &lt;span class=&quot;c&quot;&gt;# COM VOLEN QUE ES DIGUI EL FITXER DESCARREGAT&lt;/span&gt;
-      &lt;span class=&quot;c&quot;&gt;# ABANS I DESPRÉS DE LA CONFIGURACIÓ DEL NOM PORTA DOBLES COMETES&lt;/span&gt;
-      &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;:
-        filename: &lt;span class=&quot;c&quot;&gt;# NOM AMB QUE ES DESCARREGARA EL FITXER MP3&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;na&quot;&gt;templates&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;podcast&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;accept_all&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;yes&lt;/span&gt;
+       &lt;span class=&quot;c1&quot;&gt;# PER A QUE SOLAMENT DESCARREGUI ELS 5 ULTIMS PODCAST&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;limit_new&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;
+       &lt;span class=&quot;c1&quot;&gt;# COM VOLEN QUE ES DIGUI EL FITXER DESCARREGAT&lt;/span&gt;
+       &lt;span class=&quot;c1&quot;&gt;# ABANS I DESPRÉS DE LA CONFIGURACIÓ DEL NOM PORTA DOBLES COMETES&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+         &lt;span class=&quot;na&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# NOM AMB QUE ES DESCARREGARA EL FITXER MP3&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Y ahora vamos a poner el script que se encarga de descargar (en base al &lt;strong&gt;template&lt;/strong&gt;) los podcast:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  &lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;# DESCARREGA DE PODCAST&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
-  tasks:
-    &lt;span class=&quot;c&quot;&gt;# PODCAST EN GUARDIA&lt;/span&gt;
-    podCastEnGuardia:
-      template: podcast
-      &lt;span class=&quot;c&quot;&gt;# RSS (XML) del programa&lt;/span&gt;
-      rss: https://dinamics.ccma.cat/public/podcast/catradio/xml/4/4/podprograma944.xml
-      &lt;span class=&quot;c&quot;&gt;# DIRECTORI DE DESCARREGA&lt;/span&gt;
-      download: /media/podcast&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-vim highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   #
+   # DESCARREGA DE PODCAST
+   #
+   tasks&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+     # PODCAST EN GUARDIA
+     podCastEnGuardia&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+       template&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; podcast
+       # RSS &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;XML&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; del programa
+       rss&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; https&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt;dinamics&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;ccma&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;cat&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/public/&lt;/span&gt;podcast&lt;span class=&quot;sr&quot;&gt;/catradio/&lt;/span&gt;xml&lt;span class=&quot;sr&quot;&gt;/4/&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;/podprograma944&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;xml
+       # DIRECTORI DE DESCARREGA
+       download&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/media/&lt;/span&gt;podcast
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Por ultimo podriamos poner el &lt;strong&gt;calendario&lt;/strong&gt; de ejecución de este script, en mi caso, le indico que todas las tareas &lt;strong&gt;tasks&lt;/strong&gt; que empiezen por &lt;strong&gt;podCast&lt;/strong&gt; se ejecuten una vez al dia:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  &lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;# CALENDARI EXECUCIÓ DE LES TASQUES&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
-  schedules:
-    &lt;span class=&quot;c&quot;&gt;# DESCARREGA PODCAST&lt;/span&gt;
-    - tasks: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'podCast*'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-      interval:
-        days: 1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-vim highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   #
+   # CALENDARI EXECUCIÓ DE LES TASQUES
+   #
+   schedules&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+     # DESCARREGA PODCAST
+     &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; tasks&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'podCast*'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+       interval&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+         days&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Este script tiene que estar en el fichero &lt;strong&gt;config.yml&lt;/strong&gt; de flexget. Lo que se puede hacer antes, es probar que todo funciona correctamente a traves de la instrucción (dentro de docker):&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-terminal&quot; data-lang=&quot;terminal&quot;&gt;&lt;span class=&quot;gp&quot;&gt;  usuari@debian:~$&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;flexget &lt;span class=&quot;nt&quot;&gt;--test&lt;/span&gt; execute &lt;span class=&quot;nt&quot;&gt;--task&lt;/span&gt; podCastEnGuardia &lt;span class=&quot;nt&quot;&gt;--dump&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   usuari@debian:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;flexget &lt;span class=&quot;nt&quot;&gt;--test&lt;/span&gt; execute &lt;span class=&quot;nt&quot;&gt;--task&lt;/span&gt; podCastEnGuardia &lt;span class=&quot;nt&quot;&gt;--dump&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Y ahora solamente nos queda disfrutar.&lt;/p&gt;
 
@@ -960,26 +973,27 @@ en cara a &lt;strong&gt;Gonic&lt;/strong&gt;, pero a este ultimo le falta algo q
 
 &lt;p&gt;Como todo en docker, solamente se tiene que añadir en tu fichero &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose.yml&lt;/code&gt; la configuración necesaria para instalar &lt;strong&gt;navidrome&lt;/strong&gt; que en mi caso es la siguiente:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-docker&quot; data-lang=&quot;docker&quot;&gt;  navidrome:
-    image: deluan/navidrome:latest
-    container_name: navidrome
-    user: 1000:1000 
-    ports:
-      - &quot;4533:4533&quot;
-    restart: unless-stopped
-    environment:
-      ND_TRANSCODINGCACHESIZE: 100MB
-      ND_SCANSCHEDULE: &quot;@every 1h&quot;
-      ND_SESSIONTIMEOUT: 24h
-      ND_LASTFM_ENABLED: &quot;true&quot;
-      ND_LASTFM_APIKEY: &quot;API DE LASTFM&quot;
-      ND_LASTFM_SECRET: &quot;API DE LASTFM&quot;
-      ND_LASTFM_LANGUAGE: &quot;es&quot;
-      ND_SPOTIFY_ID: &quot;API DE SPOTIFY&quot;
-      ND_SPOTIFY_SECRET: &quot;API DE SPOTIFY&quot;
-    volumes:
-      - ${STORAGE}/config/navidrome:/data
-      - ${MEDIA}/audio/Music:/music:ro&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;na&quot;&gt;navidrome&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;deluan/navidrome:latest&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;container_name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;navidrome&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;1000:1000&lt;/span&gt; 
+     &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+       &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;4533:4533&quot;&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;restart&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;unless-stopped&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;ND_TRANSCODINGCACHESIZE&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;100MB&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;ND_SCANSCHEDULE&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@every&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;1h&quot;&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;ND_SESSIONTIMEOUT&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;24h&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;ND_LASTFM_ENABLED&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;true&quot;&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;ND_LASTFM_APIKEY&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;API&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;DE&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;LASTFM&quot;&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;ND_LASTFM_SECRET&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;API&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;DE&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;LASTFM&quot;&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;ND_LASTFM_LANGUAGE&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;es&quot;&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;ND_SPOTIFY_ID&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;API&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;DE&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;SPOTIFY&quot;&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;ND_SPOTIFY_SECRET&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;API&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;DE&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;SPOTIFY&quot;&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+       &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;${STORAGE}/config/navidrome:/data&lt;/span&gt;
+       &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;${MEDIA}/audio/Music:/music:ro&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Yo he puesto las opciones de configuración que uso o las que más me interesan que son:&lt;/p&gt;
 &lt;ul&gt;
@@ -990,7 +1004,8 @@ en cara a &lt;strong&gt;Gonic&lt;/strong&gt;, pero a este ultimo le falta algo q
 
 &lt;p&gt;Y ahora solamente queda levantar el contenedor:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-terminal&quot; data-lang=&quot;terminal&quot;&gt;&lt;span class=&quot;gp&quot;&gt;  usuari@raspberry:/#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;docker-compose up &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; navidrome&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   usuari@raspberry:/# docker-compose up &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; navidrome
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Y aqui es cuando se hace la magia. A lo mejor tarda un poco en estar disponible, porque esta escaneando toda la musica que tienes, pero cuando digo tardar, son un par de segundos. Porque lo escanea todo
 a una velocidad increible.&lt;/p&gt;
@@ -1045,25 +1060,27 @@ a &lt;strong&gt;traefik&lt;/strong&gt; si me fui de el por su complejidad, asi q
 
 &lt;p&gt;Para usarlo en Docker utilice la siguiente configuración:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-docker&quot; data-lang=&quot;docker&quot;&gt;  npm:
-    image: jc21/nginx-proxy-manager:latest
-    container_name: npm
-    restart: unless-stopped
-    ports:
-      - '80:80'
-      - '81:81'
-      - '443:443'
-    volumes:
-      - ${STORAGE}/config/npm/data:/data
-      - ${STORAGE}/config/npm/letsencrypt:/etc/letsencrypt&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;na&quot;&gt;npm&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jc21/nginx-proxy-manager:latest&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;container_name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;npm&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;restart&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;unless-stopped&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+       &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;80:80'&lt;/span&gt;
+       &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;81:81'&lt;/span&gt;
+       &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;443:443'&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+       &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;${STORAGE}/config/npm/data:/data&lt;/span&gt;
+       &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;${STORAGE}/config/npm/letsencrypt:/etc/letsencrypt&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Hay que tener en cuenta una cosa, en algunos sitios, te indican que tienes que tener, a parte de &lt;strong&gt;npm&lt;/strong&gt;, tienes que tener un &lt;em&gt;gestor de BBDD&lt;/em&gt;, pero yo he podido comprobar, y es como lo tengo actualmente,
 que no hace falta tener ningun gestor de BBDD (a lo mejor las nuevas versiones de npm ya lo tengan incorporado).&lt;/p&gt;
 
 &lt;p&gt;Una vez, instalado, accedemos a traves (en mi caso) del puerto 81 y con las siguintes credenciales :&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  Username: admin@example.com
-  Password: changeme&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   Username: admin@example.com
+   Password: changeme
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Cuando accedemos al sistema, lo primero que hacemos es cambiar el usuario y el password de acceso y ya lo tenemos preparado para poderlo usar.&lt;/p&gt;
 
@@ -1134,19 +1151,20 @@ decidir buscar otra alternativa más facil.&lt;/p&gt;
 
 &lt;p&gt;Recuerda que para generar los certificados de Let’s Encrypt, Caddy necesita tener abiertos los puertos 80 y 443.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-docker&quot; data-lang=&quot;docker&quot;&gt;  version: &quot;3.7&quot;
-  services:
-    caddy:
-      image: caddy
-      ports:
-        - &quot;80:80&quot;
-        - &quot;443:443&quot;
-      volumes:
-        - ./Caddyfile:/etc/caddy/Caddyfile:ro
-        - ./data/caddy/data:/data
-        - ./data/caddy/config:/config
-      restart: unless-stopped
-      container_name: caddy  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3.7&quot;&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;caddy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;caddy&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+         &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;80:80&quot;&lt;/span&gt;
+         &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;443:443&quot;&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+         &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./Caddyfile:/etc/caddy/Caddyfile:ro&lt;/span&gt;
+         &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./data/caddy/data:/data&lt;/span&gt;
+         &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;./data/caddy/config:/config&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;restart&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;unless-stopped&lt;/span&gt;
+       &lt;span class=&quot;na&quot;&gt;container_name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;caddy&lt;/span&gt;  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Creamos el archivo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Caddyfile&lt;/code&gt;, donde irá la configuración de nuestro proxy inverso.&lt;/p&gt;
 
@@ -1155,9 +1173,10 @@ decidir buscar otra alternativa más facil.&lt;/p&gt;
 
 &lt;p&gt;Caddy se encargará de exponer este servicio a la red generando el certificado con Let’s Encrypt, que en mi caso, como ya he dicho, es mi Spotify privado y asi no tener que depender de nadie.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;  music.midominio.duckdns.org &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                                  reverse_proxy http://192.168.1.100:4533
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;div class=&quot;language-vim highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   music&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;midominio&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;duckdns&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;org &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+                                  reverse_proxy http&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;192&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;168&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4533&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Asi de rapido y de sencillo tengo mi proxy inverso en funcionamiento junto con mi certificado SSL. Y lo más interesante, es que cuando llegue el momento de que el certificado vaya a caducar, el mismo
 caddy se encargara de actualizarlo.&lt;/p&gt;
@@ -1168,6 +1187,109 @@ caddy se encargara de actualizarlo.&lt;/p&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
+      </item>
+    
+      <item>
+        <title>Montar imagen ISO desde consola en GNU/Linux</title>
+        <link>/2021/03/25/montar-imagen-iso-consola.html</link>
+        <guid isPermaLink="true">/2021/03/25/montar-imagen-iso-consola.html</guid>
+        <description>&lt;p&gt;Vamos a explicar como a traves de la consola de GNU/Linux se puede montar una imagen / archivo ISO.&lt;/p&gt;
+
+&lt;p&gt;No se si os ha pasado alguna vez a vosotros, pero llega un dia, que teneis una &lt;strong&gt;ISO&lt;/strong&gt; y os encontrais sin CD para gravar y el lector y no sabeis que hacer en ese momento (me ha pasado más de una vez),
+ hasta que he encontrado este sencillo metodo para resolver el problema.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Lo primero es acceder a la consola y ejecutamos el siguiente comando:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   usuari@debian:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo mkdir&lt;/span&gt; /media/cdrom
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Estamos creando el directorio donde vamos a montar la imagen &lt;strong&gt;ISO&lt;/strong&gt;, en mi caso, como ya tengo este directorio me puedo saltar este paso.&lt;/p&gt;
+
+&lt;p&gt;Ahora pasamos a montar la imagen directamente:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   usuari@debian:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;mount &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; loop &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; iso9660 /ruta_imagen.iso /media/cdrom
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Vamos a explicar un poco que significa cada parametro:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;El parametro &lt;strong&gt;-o&lt;/strong&gt; es un indicador de opciones genericas para asi poder usar &lt;strong&gt;loop&lt;/strong&gt;. Esta opción de bucle le indica a GNU/Linux que use la interfaz de bucle invertido en lugar de un dispositivo 
+fisico, ya que la imagen ISO no es un dispositivo real con una lista en el directorio &lt;strong&gt;/dev&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;El parametro &lt;strong&gt;-t&lt;/strong&gt; hace referencia al tipo de sistema de archivos a montar, en este caso es &lt;strong&gt;iso9660&lt;/strong&gt; o lo que es lo mismo, usa &lt;strong&gt;ISO&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Cuando tenemos montada la &lt;strong&gt;ISO&lt;/strong&gt;, ya podemos acceder a ella como si fuera un CD/DVD normal.&lt;/p&gt;
+
+&lt;p&gt;Para finalizar, nos quedara desmontar la imagen &lt;strong&gt;ISO&lt;/strong&gt; de la misma manera como se haria con un dispositivo fisico:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   usuari@debian:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;umount /media/cdrom
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;referencia&quot;&gt;Referencia&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.solvetic.com/tutoriales/article/5805-como-montar-iso-en-linux/&quot;&gt;Cómo montar imagen ISO en Linux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
+      </item>
+    
+      <item>
+        <title>Raspberry Pi. Externalizando copias de seguridad</title>
+        <link>/2021/01/18/rpi-externalizando-copias-seguridad.html</link>
+        <guid isPermaLink="true">/2021/01/18/rpi-externalizando-copias-seguridad.html</guid>
+        <description>&lt;p&gt;Este articulo es una continuación al que hice hace un par de dias con respecto a realizar copias de seguridad en mi RPI4 con &lt;a href=&quot;/2021/01/17/rpi-copias-seguridad.html&quot;&gt;rsnapshot&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Esta bien hacer copias de seguridad de los ficheros más importantes del sistema, pero hay un problema, que si estas copias estan en el mismo HDD que el resto del sistema, en caso de que el HDD falle, 
+pierdes todas las copias de seguridad que habias hecho.&lt;/p&gt;
+
+&lt;p&gt;Pero para esto, tenemos a &lt;strong&gt;Docker&lt;/strong&gt; que viene en nuestra ayuda. En este caso, si tienes una cuenta de &lt;strong&gt;MEGA&lt;/strong&gt;, la puedes utilizar, para una vez que has hecho las copias de seguridad de tu sistema 
+con &lt;strong&gt;rsnapshot&lt;/strong&gt;, las guardas en tu cuenta, para en caso de fallo, poder recuperar toda la información sin ningun problema.&lt;/p&gt;
+
+&lt;p&gt;Esto se puede hacer a traves de la imagen &lt;a href=&quot;https://hub.docker.com/r/melsonlai/docker-megacmd&quot;&gt;MegaCmd&lt;/a&gt; que nos provee de un sistema automatico, para que al copiar ficheros que nosotros pongamos en 
+dicho directorio, los copia automaticamente en nuestra cuenta de &lt;strong&gt;Mega&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Lo que necesitamos primero es hacer nuestro &lt;strong&gt;docker-compose&lt;/strong&gt; de la siguiente manera:&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;na&quot;&gt;megacmd&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;melsonlai/docker-megacmd:arm&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;container_name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;megacmd&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;restart&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;unless-stopped&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+       &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;PUID=1000&lt;/span&gt;
+       &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;PGID=1000&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+       &lt;span class=&quot;c1&quot;&gt;# DIRECTORIO DONDE ESTA LA CONFIGURACIÓN DE MEGA&lt;/span&gt;
+       &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/mnt/config/megacmd:/home/d_user&lt;/span&gt;
+       &lt;span class=&quot;c1&quot;&gt;# DIRECTORIO DONDE ESTA LAS COPIAS DE SEGURIDAD DE RSNAPSHOT Y QUE QUEREMOS&lt;/span&gt;
+       &lt;span class=&quot;c1&quot;&gt;# COPIAR EN MEGA&lt;/span&gt;
+       &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/mnt/seguretat:/mnt/sync&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Una vez tenemos nuestro fichero &lt;strong&gt;docker-compose&lt;/strong&gt;, solamente nos queda usar nuestro comando favorito &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose up -d megacmd&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Cuando se ha finalizado la descarga de la imagen, tenemos que ejecutar el siguiente comando para entrar en el container y finalizar la configuración del sistema:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   usuari@raspberry:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; megacmd su - d_user
+
+   ~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mega-login &amp;lt;account-email&amp;gt; &amp;lt;password&amp;gt;
+   ~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mega-sync &amp;lt;localpath&amp;gt; &amp;lt;dstremotepath&amp;gt;
+
+   &lt;span class=&quot;c&quot;&gt;# EN MI CASO, ESTA INSTRUCCIÓN SERIA LA SIGUIENTE&lt;/span&gt;
+   ~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mega-sync /mnt/sync /backup
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Y con esta se da por finalizada la configuración de &lt;strong&gt;MegaCmd&lt;/strong&gt; que automaticamente sincronizara el contenido del directorio &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/mnt/seguretat&lt;/code&gt; con el directorio que 
+hayais seleccionado en vuestra cuenta de &lt;strong&gt;Mega&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;referencia&quot;&gt;Referencia&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/melsonlai/docker-megacmd&quot;&gt;MEGA - cmd&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
       </item>
     
   </channel>
