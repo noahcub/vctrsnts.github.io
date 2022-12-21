@@ -5,7 +5,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://0.0.0.0:4000/</link>
     <description></description>
-    <pubDate>Wed, 21 Dec 2022 21:53:27 +0000</pubDate>
+    <pubDate>Wed, 21 Dec 2022 22:41:34 +0000</pubDate>
     
       <item>
         <title>Cambiando de editor. Neovim</title>
@@ -777,6 +777,17 @@ porque es el minimo que (en mi caso) GPARTED no me transformaba la primera parti
       </item>
     
       <item>
+        <title>Usando Tmux</title>
+        <link>/2022/01/01/usando-tmux.html</link>
+        <guid isPermaLink="true">/2022/01/01/usando-tmux.html</guid>
+        <description>&lt;p&gt;Mi configuración de tmux&lt;/p&gt;
+
+&lt;p&gt;video peladonerd hablando de tmux :https://www.youtube.com/watch?v=7gmpjacFoHM&lt;/p&gt;
+</description>
+        <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      </item>
+    
+      <item>
         <title>Solucionar error i915 en grafica Intel</title>
         <link>/2021/06/09/solucionar-error-i915.html</link>
         <guid isPermaLink="true">/2021/06/09/solucionar-error-i915.html</guid>
@@ -1232,64 +1243,6 @@ fisico, ya que la imagen ISO no es un dispositivo real con una lista en el direc
 &lt;/ul&gt;
 </description>
         <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
-      </item>
-    
-      <item>
-        <title>Raspberry Pi. Externalizando copias de seguridad</title>
-        <link>/2021/01/18/rpi-externalizando-copias-seguridad.html</link>
-        <guid isPermaLink="true">/2021/01/18/rpi-externalizando-copias-seguridad.html</guid>
-        <description>&lt;p&gt;Este articulo es una continuación al que hice hace un par de dias con respecto a realizar copias de seguridad en mi RPI4 con &lt;a href=&quot;/2021/01/17/rpi-copias-seguridad.html&quot;&gt;rsnapshot&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Esta bien hacer copias de seguridad de los ficheros más importantes del sistema, pero hay un problema, que si estas copias estan en el mismo HDD que el resto del sistema, en caso de que el HDD falle, 
-pierdes todas las copias de seguridad que habias hecho.&lt;/p&gt;
-
-&lt;p&gt;Pero para esto, tenemos a &lt;strong&gt;Docker&lt;/strong&gt; que viene en nuestra ayuda. En este caso, si tienes una cuenta de &lt;strong&gt;MEGA&lt;/strong&gt;, la puedes utilizar, para una vez que has hecho las copias de seguridad de tu sistema 
-con &lt;strong&gt;rsnapshot&lt;/strong&gt;, las guardas en tu cuenta, para en caso de fallo, poder recuperar toda la información sin ningun problema.&lt;/p&gt;
-
-&lt;p&gt;Esto se puede hacer a traves de la imagen &lt;a href=&quot;https://hub.docker.com/r/melsonlai/docker-megacmd&quot;&gt;MegaCmd&lt;/a&gt; que nos provee de un sistema automatico, para que al copiar ficheros que nosotros pongamos en 
-dicho directorio, los copia automaticamente en nuestra cuenta de &lt;strong&gt;Mega&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;Lo que necesitamos primero es hacer nuestro &lt;strong&gt;docker-compose&lt;/strong&gt; de la siguiente manera:&lt;/p&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;na&quot;&gt;megacmd&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-     &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;melsonlai/docker-megacmd:arm&lt;/span&gt;
-     &lt;span class=&quot;na&quot;&gt;container_name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;megacmd&lt;/span&gt;
-     &lt;span class=&quot;na&quot;&gt;restart&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;unless-stopped&lt;/span&gt;
-     &lt;span class=&quot;na&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-       &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;PUID=1000&lt;/span&gt;
-       &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;PGID=1000&lt;/span&gt;
-     &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-       &lt;span class=&quot;c1&quot;&gt;# DIRECTORIO DONDE ESTA LA CONFIGURACIÓN DE MEGA&lt;/span&gt;
-       &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/mnt/config/megacmd:/home/d_user&lt;/span&gt;
-       &lt;span class=&quot;c1&quot;&gt;# DIRECTORIO DONDE ESTA LAS COPIAS DE SEGURIDAD DE RSNAPSHOT Y QUE QUEREMOS&lt;/span&gt;
-       &lt;span class=&quot;c1&quot;&gt;# COPIAR EN MEGA&lt;/span&gt;
-       &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/mnt/seguretat:/mnt/sync&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Una vez tenemos nuestro fichero &lt;strong&gt;docker-compose&lt;/strong&gt;, solamente nos queda usar nuestro comando favorito &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose up -d megacmd&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Cuando se ha finalizado la descarga de la imagen, tenemos que ejecutar el siguiente comando para entrar en el container y finalizar la configuración del sistema:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   usuari@raspberry:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; megacmd su - d_user
-
-   ~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mega-login &amp;lt;account-email&amp;gt; &amp;lt;password&amp;gt;
-   ~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mega-sync &amp;lt;localpath&amp;gt; &amp;lt;dstremotepath&amp;gt;
-
-   &lt;span class=&quot;c&quot;&gt;# EN MI CASO, ESTA INSTRUCCIÓN SERIA LA SIGUIENTE&lt;/span&gt;
-   ~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mega-sync /mnt/sync /backup
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Y con esta se da por finalizada la configuración de &lt;strong&gt;MegaCmd&lt;/strong&gt; que automaticamente sincronizara el contenido del directorio &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/mnt/seguretat&lt;/code&gt; con el directorio que 
-hayais seleccionado en vuestra cuenta de &lt;strong&gt;Mega&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h4 id=&quot;referencia&quot;&gt;Referencia&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/melsonlai/docker-megacmd&quot;&gt;MEGA - cmd&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
       </item>
     
   </channel>
