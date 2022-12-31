@@ -5,7 +5,68 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://0.0.0.0:4000/</link>
     <description></description>
-    <pubDate>Wed, 28 Dec 2022 17:22:11 +0000</pubDate>
+    <pubDate>Sat, 31 Dec 2022 19:46:55 +0000</pubDate>
+    
+      <item>
+        <title>Creando tu propi Spotify privado - Annexo</title>
+        <link>/2022/12/31/rpi-spotity.html</link>
+        <guid isPermaLink="true">/2022/12/31/rpi-spotity.html</guid>
+        <description>&lt;p&gt;Tal como explique en este articulo &lt;a href=&quot;/2021/05/08/rpi-spotify.html&quot;&gt;Creando tu propio servidor de music&lt;/a&gt; cuando tienes un servidor en tu casa, empiezas a tener ideas locas de que podrias hacer con el.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Pero después de mucho provar (siguiente la estela de uGeek) creo que llegas al mismo punto (pero más lento). Si ya venia usando (en mi caso) &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jellyfin&lt;/code&gt; que te permite tambien tener ordenado y listado toda la musica, porque no usarlo tambien y asi substituir &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gonic&lt;/code&gt; o &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Navidrome&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Y es lo que he hecho, a parte de añadir un plugin nuevo siguiendo el consejo de uGeek y asi poder cambiar el &lt;a href=&quot;https://ugeek.github.io/blog/post/2020-11-15-jellyfin-skin-manager-repositorio-para-cambiar-el-tema-de-tu-jellyfin.html&quot;&gt;tema&lt;/a&gt; al que más te guste y tambien puede añadir el plugin de &lt;a href=&quot;https://ugeek.github.io/blog/post/2021-08-09-lista-de-repositorios-de-jellyfin-.html&quot;&gt;LastFm&lt;/a&gt; para que asi, tener más información sobre la musica que estas escuchando, que no consigo que funcione correctamente y tampoco hay mucha información en inet para saber el motivo.&lt;/p&gt;
+
+&lt;p&gt;A parte, como es mi caso, escucho la musica en el movil y tenia que buscar una nueva aplicación para ello, y como no, siempre uGeek viene en mi ayuda, &lt;a href=&quot;https://ugeek.github.io/post/2022-12-23-notas-manjaro-jellyfin-podcast--.html&quot;&gt;aqui&lt;/a&gt; te aconseja una nueva aplicación (que la verdad que tiene muy buena pinta) para asi conectar con el servidor de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jellyfin&lt;/code&gt; y poder escuchar tu  musica sin ningun problema.&lt;/p&gt;
+
+&lt;p&gt;Asi mismo, tambien escucho musica en mi portatil personal a traves de &lt;a href=&quot;https://ugeek.github.io/blog/post/2021-12-29-sonixd-player-para-jellyfin-y-subsonic.html&quot;&gt;Sonixd&lt;/a&gt;, que es una aplicación (en mi caso, como no esta nativa en GNU/Debian, la uso como appImage) y que ya venia usando de antes del cambio, porque funcionaba correctamente con &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gonic&lt;/code&gt; y cuando vi que tambien se podia usar con &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jellyfin&lt;/code&gt; pues fue un punto más a favor del cambio, y lo más fuerte, es que luego, veo que uGeek tambien tiene un articulo explicando un poco el funcionamiento de esta aplicación.&lt;/p&gt;
+
+&lt;p&gt;Asi que de momento, estoy en este punto, he quitado el servidor &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gonic&lt;/code&gt; que venia usando y ahora estoy con &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jellyfin&lt;/code&gt; para todo. Casi como si fuera una navaja suiza.&lt;/p&gt;
+
+&lt;h4 id=&quot;referencia&quot;&gt;Referencia&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ugeek.github.io/blog/post/2020-11-15-jellyfin-skin-manager-repositorio-para-cambiar-el-tema-de-tu-jellyfin.html&quot;&gt;Jellyfin como servidor de musica&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ugeek.github.io/blog/post/2021-08-09-lista-de-repositorios-de-jellyfin-.html&quot;&gt;Añadir repositorios a Jellyfin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ugeek.github.io/post/2022-12-23-notas-manjaro-jellyfin-podcast--.html&quot;&gt;Boum&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ugeek.github.io/blog/post/2021-12-29-sonixd-player-para-jellyfin-y-subsonic.html&quot;&gt;Sonix&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 31 Dec 2022 00:00:00 +0000</pubDate>
+      </item>
+    
+      <item>
+        <title>Volviendo a Caddy desde Nginx Proxy Manager</title>
+        <link>/2022/12/25/rpi-caddy-proxy-manager.html</link>
+        <guid isPermaLink="true">/2022/12/25/rpi-caddy-proxy-manager.html</guid>
+        <description>&lt;p&gt;Como ya sabreis, &lt;a href=&quot;/2021/05/07/rpi-nginx-proxy-manager.html&quot;&gt;anteriormente&lt;/a&gt; usaba &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Nginx Proxy Manager&lt;/code&gt; porque habia tenido muchos problemas con &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Caddy&lt;/code&gt;, no se de donde venian estos problemas, si de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Caddy&lt;/code&gt; o de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;duckdns.org&lt;/code&gt;, asi que hice el cambio a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm&lt;/code&gt; para los amigos.&lt;/p&gt;
+
+&lt;p&gt;Y aqui vuevlo a estar de nuevo.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Hice el cambio, pero habia una cosa que no me acababa de gustar, el tener la URL de mis servicios, no se como llamarlos, no &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bonitos&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;no oficiales&lt;/code&gt;?&lt;/p&gt;
+
+&lt;p&gt;Cuando me refiero a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;URL no bonitas&lt;/code&gt;, me refiero al tipo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://music-miservidor.duckdns,.org&lt;/code&gt;, como que no quedan muy legales, porque me gustan más, las de toda la vida &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://music.miservidor.duckdns.org&lt;/code&gt; que son las normalizadas.&lt;/p&gt;
+
+&lt;p&gt;Pero todo cambio, cuando vi un nuevo &lt;a href=&quot;https://ugeek.github.io/blog/post/2022-12-23-caddy-crear-usuario-y-contrasena.html&quot;&gt;articulo&lt;/a&gt; de uGeek, donde comentaba, que se podian crear usuarios y passwords en &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Caddy&lt;/code&gt; decidi volver a probar a ver si esta vez tenia más suerte.&lt;/p&gt;
+
+&lt;p&gt;Asi que me puse al lio, volvi a poner la configuración recomendada de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Caddy&lt;/code&gt; en mi servidor de Docker y a ver si esta vez teniamos más suerte:&lt;/p&gt;
+
+&lt;p&gt;Y parece que si que tenemos suerte, porque de momento todo esta funcionando correctamente y encima con el certificado de &lt;a href=&quot;https://letsencrypt.org/es/&quot;&gt;Let’s Encrypt&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Esperemos que esta vez dure más mi aventura con &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Caddy&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;referencia&quot;&gt;Referencia&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ugeek.github.io/blog/post/2021-02-19-proxy-inverso-con-caddy.html&quot;&gt;Usando Caddy&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://ugeek.github.io/blog/post/2022-12-23-caddy-crear-usuario-y-contrasena.html&quot;&gt;Usuarios en Caddy&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://letsencrypt.org/es/&quot;&gt;Let’s Encrypt&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
+      </item>
     
       <item>
         <title>Cambiando de editor. Neovim</title>
@@ -1187,109 +1248,6 @@ caddy se encargara de actualizarlo.&lt;/p&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
-      </item>
-    
-      <item>
-        <title>Montar imagen ISO desde consola en GNU/Linux</title>
-        <link>/2021/03/25/montar-imagen-iso-consola.html</link>
-        <guid isPermaLink="true">/2021/03/25/montar-imagen-iso-consola.html</guid>
-        <description>&lt;p&gt;Vamos a explicar como a traves de la consola de GNU/Linux se puede montar una imagen / archivo ISO.&lt;/p&gt;
-
-&lt;p&gt;No se si os ha pasado alguna vez a vosotros, pero llega un dia, que teneis una &lt;strong&gt;ISO&lt;/strong&gt; y os encontrais sin CD para gravar y el lector y no sabeis que hacer en ese momento (me ha pasado más de una vez),
- hasta que he encontrado este sencillo metodo para resolver el problema.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;Lo primero es acceder a la consola y ejecutamos el siguiente comando:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   usuari@debian:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo mkdir&lt;/span&gt; /media/cdrom
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Estamos creando el directorio donde vamos a montar la imagen &lt;strong&gt;ISO&lt;/strong&gt;, en mi caso, como ya tengo este directorio me puedo saltar este paso.&lt;/p&gt;
-
-&lt;p&gt;Ahora pasamos a montar la imagen directamente:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   usuari@debian:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;mount &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; loop &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; iso9660 /ruta_imagen.iso /media/cdrom
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Vamos a explicar un poco que significa cada parametro:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;El parametro &lt;strong&gt;-o&lt;/strong&gt; es un indicador de opciones genericas para asi poder usar &lt;strong&gt;loop&lt;/strong&gt;. Esta opción de bucle le indica a GNU/Linux que use la interfaz de bucle invertido en lugar de un dispositivo 
-fisico, ya que la imagen ISO no es un dispositivo real con una lista en el directorio &lt;strong&gt;/dev&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;El parametro &lt;strong&gt;-t&lt;/strong&gt; hace referencia al tipo de sistema de archivos a montar, en este caso es &lt;strong&gt;iso9660&lt;/strong&gt; o lo que es lo mismo, usa &lt;strong&gt;ISO&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Cuando tenemos montada la &lt;strong&gt;ISO&lt;/strong&gt;, ya podemos acceder a ella como si fuera un CD/DVD normal.&lt;/p&gt;
-
-&lt;p&gt;Para finalizar, nos quedara desmontar la imagen &lt;strong&gt;ISO&lt;/strong&gt; de la misma manera como se haria con un dispositivo fisico:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   usuari@debian:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;umount /media/cdrom
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;referencia&quot;&gt;Referencia&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.solvetic.com/tutoriales/article/5805-como-montar-iso-en-linux/&quot;&gt;Cómo montar imagen ISO en Linux&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 25 Mar 2021 00:00:00 +0000</pubDate>
-      </item>
-    
-      <item>
-        <title>Raspberry Pi. Externalizando copias de seguridad</title>
-        <link>/2021/01/18/rpi-externalizando-copias-seguridad.html</link>
-        <guid isPermaLink="true">/2021/01/18/rpi-externalizando-copias-seguridad.html</guid>
-        <description>&lt;p&gt;Este articulo es una continuación al que hice hace un par de dias con respecto a realizar copias de seguridad en mi RPI4 con &lt;a href=&quot;/2021/01/17/rpi-copias-seguridad.html&quot;&gt;rsnapshot&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Esta bien hacer copias de seguridad de los ficheros más importantes del sistema, pero hay un problema, que si estas copias estan en el mismo HDD que el resto del sistema, en caso de que el HDD falle, 
-pierdes todas las copias de seguridad que habias hecho.&lt;/p&gt;
-
-&lt;p&gt;Pero para esto, tenemos a &lt;strong&gt;Docker&lt;/strong&gt; que viene en nuestra ayuda. En este caso, si tienes una cuenta de &lt;strong&gt;MEGA&lt;/strong&gt;, la puedes utilizar, para una vez que has hecho las copias de seguridad de tu sistema 
-con &lt;strong&gt;rsnapshot&lt;/strong&gt;, las guardas en tu cuenta, para en caso de fallo, poder recuperar toda la información sin ningun problema.&lt;/p&gt;
-
-&lt;p&gt;Esto se puede hacer a traves de la imagen &lt;a href=&quot;https://hub.docker.com/r/melsonlai/docker-megacmd&quot;&gt;MegaCmd&lt;/a&gt; que nos provee de un sistema automatico, para que al copiar ficheros que nosotros pongamos en 
-dicho directorio, los copia automaticamente en nuestra cuenta de &lt;strong&gt;Mega&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;Lo que necesitamos primero es hacer nuestro &lt;strong&gt;docker-compose&lt;/strong&gt; de la siguiente manera:&lt;/p&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;na&quot;&gt;megacmd&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-     &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;melsonlai/docker-megacmd:arm&lt;/span&gt;
-     &lt;span class=&quot;na&quot;&gt;container_name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;megacmd&lt;/span&gt;
-     &lt;span class=&quot;na&quot;&gt;restart&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;unless-stopped&lt;/span&gt;
-     &lt;span class=&quot;na&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-       &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;PUID=1000&lt;/span&gt;
-       &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;PGID=1000&lt;/span&gt;
-     &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-       &lt;span class=&quot;c1&quot;&gt;# DIRECTORIO DONDE ESTA LA CONFIGURACIÓN DE MEGA&lt;/span&gt;
-       &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/mnt/config/megacmd:/home/d_user&lt;/span&gt;
-       &lt;span class=&quot;c1&quot;&gt;# DIRECTORIO DONDE ESTA LAS COPIAS DE SEGURIDAD DE RSNAPSHOT Y QUE QUEREMOS&lt;/span&gt;
-       &lt;span class=&quot;c1&quot;&gt;# COPIAR EN MEGA&lt;/span&gt;
-       &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/mnt/seguretat:/mnt/sync&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Una vez tenemos nuestro fichero &lt;strong&gt;docker-compose&lt;/strong&gt;, solamente nos queda usar nuestro comando favorito &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docker-compose up -d megacmd&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Cuando se ha finalizado la descarga de la imagen, tenemos que ejecutar el siguiente comando para entrar en el container y finalizar la configuración del sistema:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   usuari@raspberry:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; megacmd su - d_user
-
-   ~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mega-login &amp;lt;account-email&amp;gt; &amp;lt;password&amp;gt;
-   ~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mega-sync &amp;lt;localpath&amp;gt; &amp;lt;dstremotepath&amp;gt;
-
-   &lt;span class=&quot;c&quot;&gt;# EN MI CASO, ESTA INSTRUCCIÓN SERIA LA SIGUIENTE&lt;/span&gt;
-   ~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mega-sync /mnt/sync /backup
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Y con esta se da por finalizada la configuración de &lt;strong&gt;MegaCmd&lt;/strong&gt; que automaticamente sincronizara el contenido del directorio &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/mnt/seguretat&lt;/code&gt; con el directorio que 
-hayais seleccionado en vuestra cuenta de &lt;strong&gt;Mega&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h4 id=&quot;referencia&quot;&gt;Referencia&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://hub.docker.com/r/melsonlai/docker-megacmd&quot;&gt;MEGA - cmd&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Mon, 18 Jan 2021 00:00:00 +0000</pubDate>
       </item>
     
   </channel>
